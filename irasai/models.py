@@ -14,7 +14,9 @@ class Irasas(models.Model):
     albumas = models.CharField('Albumas', max_length=100)
     metai_pasirode = models.IntegerField('Pirmo leidimo metai')
     aprasymas = models.TextField('Aprašymas', max_length=2000)
-    artistasFK = models.ForeignKey('Artistas', on_delete=models.SET_NULL, null=True, related_name='irasas_set',)
+    # related_name='irasas_set', irasas_set bus naudojamas iš Artistas objekto, jo įrašams ištraukti
+    artistasFK = models.ForeignKey(Artistas, on_delete=models.SET_NULL, null=True, related_name='irasas_set')
+
 
     def __str__(self):
         return self.albumas

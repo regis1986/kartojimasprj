@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Irašų sąrašas:</h1>
+
+<ul>
+    {% for irasas_o in irasas_list %}
+        <li><a href="{% url 'irasas-vienas-url' irasas_o.id%}">{{ irasas_o.albumas }}</a> {{ irasas_o.artistasFK.pavadinimas }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}

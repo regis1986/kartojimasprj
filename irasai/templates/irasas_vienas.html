@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ irasas.albumas }} {{ irasas.artistasFK.pavadinimas }}</h1>
+<hr/>
+<h5>Irašo aprašymas</h5>
+<p>{{ irasas.aprasymas }}</p>
+<hr/>
+<h5>Artisto biografija</h5>
+<p>{{ irasas.artistasFK.biografija }}</p>
+{% endblock %}
